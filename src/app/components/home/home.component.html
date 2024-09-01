@@ -1,0 +1,15 @@
+<mdb-carousel [controls]="true" [indicators]="true" [animation]="'fade'">
+  @for (item of actions; track $index) {
+  <mdb-carousel-item>
+    <div class="carousel-image" style="background-image: url('../../../assets/img/carroussel-{{ item.img }}')">
+      <div class="carousel-caption">
+        <h1>Bem Vindo a <span class="highlight">Green Line</span>.</h1>
+        <p>Produtos tech de qualidade.</p>
+        <a routerLink='produto'>
+          <button type="button" class="btn btn-outline-success" mdbRipple rippleColor="dark">Explorar Loja</button>
+        </a>
+      </div>
+    </div>
+  </mdb-carousel-item>
+}
+</mdb-carousel>
