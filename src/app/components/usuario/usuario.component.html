@@ -1,0 +1,50 @@
+<!-- src/app/cadastro/cadastro.component.html -->
+<div class="container">
+    <div class="row">
+      <div class="col-lg-4"></div>
+      <div class="col-lg-4 topo">
+        <div class="card">
+          <div class="card-body rounded-6">
+            <h3 class="card-title text-white fw-bold">Área do Usuário</h3>
+            <br>
+            <form #usuarioForm="ngForm">
+              <div class="form-group">
+                <p class="text-white">Email</p>
+                <input type="email" class="form-control no-border text-white" id="inputEmail" name="emailUsuario" [(ngModel)]="usuario.emailUsuario"  readonly>
+              </div>
+              <br>
+              <div class="form-group">
+                <p class="text-white">Nome de usuário</p>
+                <div class="form-inline">
+                  <input type="text" class="form-control no-border custom-input text-white" id="inputNomeCliente" [(ngModel)]="cliente.nomeCliente" name="nomeCliente">
+                </div>
+              </div>
+              <br>
+              <div class="form-group">
+                <p class="text-white">Endereço</p>
+                <div class="form-inline">
+                  <input type="text" class="form-control no-border custom-input text-white" id="inputEndereco" [(ngModel)]="cliente.enderecoCliente" name="enderecoUsuario">
+                </div>
+              </div>
+              <br>
+              <div class="form-group">
+                <p class="text-white">Telefone</p>
+                <div class="form-inline">
+                  <input type="text" class="form-control no-border custom-input text-white" id="inpuTelefone" [(ngModel)]="cliente.telefoneCliente" name="telefoneUsuario" >
+                </div>
+              </div>
+              <br>
+              <div class="buttons">
+                <button type="button" (click)="update()" class="btn btn-outline-success text-white border-color-green btn1 px-5">Adicionar dados</button>
+                <button type="button" class="btn btn-outline-success text-white border-color-green btn1 px-5" mdbRipple>Excluir conta</button>
+              </div>
+              <br>
+              <p>Clique em adicionar dados para finalizar cadastro do usuario</p>
+            </form>
+          </div>
+        </div>
+      </div>
+      <div class="col-lg-4"></div>
+    </div>
+  </div>
+  

@@ -1,0 +1,20 @@
+.footer-itens{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.footer-logo{
+    max-width: 55px;
+    min-width: 55px;
+}
+
+p{
+    margin: 0; 
+    font-size: 14px;
+}
+
+i:hover{
+    color: var(--green-primary);
+}

@@ -1,0 +1,10 @@
+<!-- <div class="produto_container">
+    <app-produtos-card></app-produtos-card>
+</div> -->
+<div class="d-flex flex-row flex-wrap justify-content-start produto_container">
+    @for (produto of lista; track $index){
+
+        <app-produtos-card [produto]="produto" (retorno)="btnClicked($event)"></app-produtos-card>
+    
+    }
+</div>

@@ -1,0 +1,26 @@
+.card-produtos{
+    width: 266px;
+    height: 384px;  
+}
+
+.card-produtos:hover{
+    border: 1px solid;
+    border-color: var(--green-primary);
+    box-shadow: 0px 0px 5px 1px var(--green-primary);
+}
+
+img{
+    width: 100%;
+    height: auto;
+}
+
+.btn-compra{
+    color: var(--white);
+    font-size: 13px;
+}
+
+.btn-compra:hover{
+    background-color: var(--green-primary);
+    border-color: var(--green-primary);
+    color: var(--black-primary);
+}

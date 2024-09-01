@@ -1,0 +1,66 @@
+body {
+    background-color: var(--black-primary);
+}
+
+.topo {
+    margin-top: 03vh;
+}
+
+.custom-input:hover {
+    background-color: var(--black-secundary);
+    border-bottom: 2px solid var(--green-primary);
+}
+
+.no-border {
+    border: 0;
+    box-shadow: none;
+    background-color: var(--black-secundary);
+}
+
+.input2 {
+    width: 215px;
+}
+
+.card-body {
+    background-color: var(--grey);
+}
+
+.buttons {
+    display: flex;
+    align-items: center;
+    gap: 30px;
+    height: 42px;
+}
+
+.btn1 {
+    background-color: #191919;
+}
+
+.btn1:hover {
+    background-color: var(--green-primary);
+    border-color: var(--green-primary);
+    color: var(--black-primary);
+}
+
+.form-inline {
+    display: flex;
+    align-items: center;
+}
+
+.form-inline .form-control {
+    margin-right: 10px; /* Espaçamento entre o input e o botão */
+}
+
+
+.btnCad{
+    display: flex;
+    justify-content: center;
+    font-size: 8px;
+    width: 70px;    
+    height: 30px;
+}
+
+input[readonly] {
+    background-color: #464545; 
+    opacity: 1; 
+}

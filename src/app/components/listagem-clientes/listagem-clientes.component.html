@@ -1,0 +1,32 @@
+<br>
+<div class="container">
+    <div class="row">
+        <div class="card">
+            <div class="card-body">
+                <h3>Listagem de Clientes</h3>
+                <br>
+                <br>               
+                <table border="1" class="table table-striped">
+                    <thead>
+                        <tr>
+                            <th>Nome</th>
+                            <th>Telefone</th>
+                            <th>Endereço</th>
+                        </tr>
+                    </thead>
+                    
+                    <tbody>
+                        @for (Cliente of lista; track $index) {
+                            <tr>
+                                <td>{{Cliente.nomeCliente}}</td>
+                                <td>{{Cliente.telefoneCliente}}</td>
+                                <td>{{Cliente.enderecoCliente}}</td>
+                            </tr>
+                        }
+                    </tbody>
+                </table>
+            </div>              
+        </div>
+    </div>
+</div>
+

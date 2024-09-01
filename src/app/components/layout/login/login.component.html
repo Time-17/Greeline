@@ -1,0 +1,27 @@
+<div class="container">
+  <div class="row">
+    <div class="col-lg-4"></div>
+    <div class="col-lg-4 topo">
+      <div class="card">
+        <div class="card-body rounded-6">
+          <h3 class="card-title text-white fw-bold">Login</h3>
+          <br>
+          <form (submit)="logar()">
+            <input type="email" class="form-control no-border custom-input text-white" id="inputEmail" placeholder="Email" name="emailUsuario" [(ngModel)]="loginData.username">                           
+            <br>                               
+            <input type="password" class="form-control no-border custom-input input2 text-white" id="inputSenha" placeholder="Senha" name="senhaUsuario" [(ngModel)]="loginData.password">              
+            <a href="#" style="color: var(--green-primary);">Esqueceu a senha?</a>
+            <br>
+            <br>
+            <div class="buttons">
+              <button type="submit" class="btn btn-outline-success text-white border-color-green btn1 px-5" mdbRipple>Acessar</button>
+              <button type="button" class="btn btn-outline-success text-white border-color-green btn1 px-5" routerLink='/cadastro'>Cadastrar</button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+    <div class="col-lg-4"></div>
+    <div class="col-lg-4"></div>
+  </div>
+</div>
