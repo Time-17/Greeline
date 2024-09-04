@@ -1,0 +1,24 @@
+.card,
+.card-header,
+.card-body,
+.list-group-item {
+    background-color: transparent; /* Tornar os elementos internos transparentes */
+}
+
+.btn-compra{
+    color: var(--white);
+    font-size: 13px;
+}
+
+.btn-compra:hover{
+    background-color: var(--green-primary);
+    border-color: var(--green-primary);
+    color: var(--black-primary);
+}
+
+.btn-compra{
+    width: 250px;
+    height: 50px;
+
+    font-size: 15px;
+}
