@@ -1,0 +1,38 @@
+<div class="bg-grey rounded-3">
+  <div class="card mb-4 fw-bolder">
+          <div class="card-header py-3 text-center border-0">
+                  <h3 class="card-title text-white mb-0">Resumo do Pedido</h3>
+          </div>
+          <hr class="text-black-secundary">
+          <div class="card-body">
+                  <ul class="list-group list-group-flush">
+                          <li
+                                  class="list-group-item d-flex justify-content-between align-items-center border-0 px-0 pb-0 text-white">
+                                  Subtotal:
+                                  <span class="text-green-primary">R$ {{total}}</span>
+                          </li>
+                          <li
+                                  class="list-group-item d-flex justify-content-between align-items-center px-0 text-white">
+                                  Frete:
+                                  <span class="text-green-primary">R$ {{frete}}</span>
+                          </li>
+                          <li
+                                  class="list-group-item d-flex justify-content-between align-items-center border-0 px-0 mb-3 text-white">
+                                  <div>
+                                          <strong>Total:</strong>
+                                  </div>
+                                  <span><span class="text-green-primary">R$ {{(total + frete)}}</span></span>
+                          </li>
+                  </ul>
+                  <hr class="text-black-secundary">
+                  <div class="text-white">
+                          <h5 class="fw-bolder"> Finalizar Compra </h5>
+                          <!-- <h6 class="fw-bolder"> Chave Pix:</h6> -->
+                          <br>
+                          <div class="d-flex justify-content-center       ">
+                                          <button type="button" class="btn btn-outline-success bg-black-primary border-color-green btn-compra fw-bold" mdbRipple (click)="save()">Finalizar Compra</button>
+                          </div>
+                  </div>
+          </div>
+  </div>
+</div>
