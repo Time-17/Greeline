@@ -1,0 +1,18 @@
+/* Remove as setas no Chrome, Safari, Edge e Opera */
+input[type=number]::-webkit-outer-spin-button,
+input[type=number]::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+/* Remove as setas no Firefox */
+// input[type=number] {
+//   -moz-appearance: textfield;
+// }
+
+button.bg-green-primary:hover {
+  background-color: var(--grey);
+  color: var(--white);
+  border: 1px solid var(--green-primary);
+  box-shadow: 0 0 16px -4px var(--green-primary);
+}

@@ -29,7 +29,7 @@ export class CarrinhoCardComponent {
   router = inject(Router)
 
   save(){
-
+    
     if (this.loginService.getUsuarioLogado() != null){
       this.itemCarrinhoService.getCarrinhoByUser(this.loginService.getUsuarioLogado().idUsuario).subscribe({
         next: carrinho => {
@@ -48,9 +48,9 @@ export class CarrinhoCardComponent {
       });
     }
 
+   
 
-
-
+    
   }
 
   finalizarVenda(){
@@ -90,5 +90,5 @@ export class CarrinhoCardComponent {
       });
     }
   }
-
+  
 }

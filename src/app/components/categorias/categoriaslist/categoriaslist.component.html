@@ -1,0 +1,61 @@
+<br />
+<div class="container">
+    <div class="row">
+        <div>
+            <div class="card">
+                <div class="card-body">
+
+                    <h3>Listagem de Categorias</h3>
+                    <div class="direita">
+                        <button type="button" class="btn btn-primary btn-rounded" mdbRipple (click)="new()">
+                        Novo
+                        </button>
+                    </div>
+                    <br>
+                    <table border="1" class="table table-striped">
+                        <thead>
+                            <tr>
+                                <th>ID</th>
+                                <th>Descrição</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            @for (Categoria of lista; track $index) {
+                                <tr>
+                                    <td>{{ Categoria.idCategoria }}</td>
+                                    <td>{{ Categoria.descricao }}</td>
+                                    <td class="direita">
+                                        <button type="button" class="btn btn-secondary btn-rounded" mdbRipple (click)="edit(Categoria)">
+                                            Editar
+                                        </button>
+                                        <button type="button" class="btn btn-danger btn-rounded" mdbRipple (click)="delete(Categoria)">
+                                            Deletar
+                                        </button>
+                                    </td>
+                                </tr>
+                            }
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<ng-template #modalCategoriaDetalhe>
+    <div class="modal-header">
+      <h5 class="modal-title" id="exampleModalLabel">Cadastro Categorias</h5>
+      <button
+        type="button"
+        class="btn-close"
+        aria-label="Close"
+        (click)="modalRef.close()"
+      ></button>
+    </div>
+    <div class="modal-body">
+    
+        <app-categoriasdetails [categoria]="categoriaEdit" (retorno)="retornoDetalhe($event)"></app-categoriasdetails>
+    
+    </div>
+    
+</ng-template>

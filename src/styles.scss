@@ -1,4 +1,3 @@
-/* You can add global styles to this file, and also import other style files */
 @import '@fortawesome/fontawesome-free/css/all.css';
 @import 'mdb-angular-ui-kit/assets/scss/mdb.scss';
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap');
@@ -13,43 +12,90 @@
 
 body {
     background-color: var(--black-secundary);
-}
-
-*{
+    margin: 0;
     font-family: "Poppins", sans-serif;
     font-style: normal;
 }
 
-.fw-medium{
+* {
+    font-family: "Poppins", sans-serif;
+    font-style: normal;
+}
+
+.fw-medium {
     font-weight: 500;
 }
 
 .bg-green-primary {
     background-color: var(--green-primary);
 }
+
 .bg-black-primary {
     background-color: var(--black-primary);
 }
+
 .bg-black-secundary {
     background-color: var(--black-secundary);
 }
+
 .bg-grey {
     background-color: var(--grey);
 }
+
 .text-green-primary {
     color: var(--green-primary);
 }
+
 .text-black-secundary {
     color: var(--black-secundary);
 }
+
 .text-white {
     color: var(--white);
 }
+
 .border-color-green {
-    border-color: var(--green-primary)!important;
+    border-color: var(--green-primary) !important;
 }
+
 .border-color-grey {
-    border-color: var(--grey)!important;
+    border-color: var(--grey) !important;
 }
-// html, body { height: 100%; } --- definições feitas pelo Angular Material
-// body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+
+/* Responsiveness */
+
+@media (max-width: 1200px) {
+    body {
+        font-size: 18px;
+    }
+    .fw-medium {
+        font-weight: 600;
+    }
+}
+
+@media (max-width: 992px) {
+    body {
+        font-size: 16px;
+    }
+    .fw-medium {
+        font-weight: 500;
+    }
+}
+
+@media (max-width: 768px) {
+    body {
+        font-size: 14px;
+    }
+    .fw-medium {
+        font-weight: 500;
+    }
+}
+
+@media (max-width: 576px) {
+    body {
+        font-size: 12px;
+    }
+    .fw-medium {
+        font-weight: 400;
+    }
+}

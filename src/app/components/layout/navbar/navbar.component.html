@@ -1,0 +1,94 @@
+<nav class="navbar navbar-dark bg-black-primary p-0 pt-1">
+    <div class="container-fluid justify-content-around pt-1 pb-1">
+        <a class="navbar-brand" routerLink='home'>
+            <img src="../../../../assets/img/Greenline-logo-sm.png" height="55" alt="Greenline logo" loading="lazy" />
+        </a>
+        <form class="d-flex input-group justify-content-center position-relative max-width">
+            <input type="search" class="form-control rounded bg-grey border-0 border-bottom border-color-green" placeholder="Digite o que você procura..." aria-label="Digite o que você procura..." />
+            <button class="input-group-text border-0 position-absolute search-icon" id="search-addon">
+                <i class="fas fa-search"></i>
+            </button>
+        </form>
+        <ul class="d-flex align-items-center p-0 m-0 list-unstyled">
+          @if(loginservice.hasPermission('ADMIN') || loginservice.hasPermission('USER')){
+            <li class="px-5">
+                <a routerLink='carrinho'class="text-white">
+                    <span><i class="fas fa-shopping-cart fa-xl"></i></span>
+                    <span class="badge rounded-pill badge-notification text-black-secundary bg-green-primary">0</span>
+                </a>
+            </li>
+          }
+            <li mdbDropdown class="nav-link ">
+              @if(loginservice.getUsuarioLogado().idUsuario == null){
+                <button routerLink='login' class="text-white d-flex flex-column align-items-center nav-link border-0" id="navbarDropdownMenuLink" role="button" mdbDropdownToggle aria-expanded="false">
+                  <span><i class="fas fa-user-alt fa-lg"></i></span>
+                  <strong class="font-14">Logar</strong>
+                </button>
+              }
+              @if(loginservice.hasPermission('ADMIN') || loginservice.hasPermission('USER')){
+                <button class="text-white d-flex flex-column align-items-center nav-link border-0" id="navbarDropdownMenuLink" role="button" mdbDropdownToggle aria-expanded="false">
+                  <span><i class="fas fa-user-alt fa-lg"></i></span>
+                  <strong class="font-14">Minha Conta</strong>
+                </button>
+              }
+                <ul mdbDropdownMenu class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                    @if(loginservice.hasPermission('ADMIN')){
+                      <li>
+                        <a class="dropdown-item" routerLink='admin/dashboard'>Dashboard</a>
+                      </li>
+                    }
+                    @if(loginservice.hasPermission('ADMIN') || loginservice.hasPermission('USER')){
+                      <li>
+                        <a class="dropdown-item" routerLink='usuario'>Editar perfil</a>
+                      </li>
+                    }
+                    @if(loginservice.hasPermission('ADMIN') || loginservice.hasPermission('USER')){
+                      <li>
+                        <a class="dropdown-item" routerLink='login'>Sair</a>
+                      </li>
+                    }
+                  </ul>
+            </li>
+        </ul>
+    </div>
+
+    <div class="container-fluid d-flex justify-content-center border-top border-bottom border-color-grey pb-2 pt-2">
+        <ul class="navbar-nav d-flex flex-row align-items-center justify-content-evenly w-75">
+          <li class="nav-item">
+            <button class="navbar-toggler d-flex align-items-center p-0" type="button" (click)="externalContent.toggle()"
+                aria-controls="navbarToggleExternalContent" aria-expanded="false" aria-label="PRODUTOS">
+              <span><i class="fas fa-bars text-green-primary pt-1"></i></span>
+              <a routerLink='produto'>
+                  <span class="text-white font-16 fw-medium ps-4">PRODUTOS</span>
+              </a>
+            </button>
+          </li>
+          <span>|</span> <!-- maneira correcta? verificar! -->
+          @for (item of actionsNav; track $index) {
+          <li class="nav-item">
+            <a routerLink='{{ item.url }}' class="d-flex">
+                <span><i class="fas {{item.icon}} text-green-primary fa-lg"></i></span>
+                <span class="text-white ps-4 fw-medium font-16 text-nowrap">{{item.text}}</span>
+            </a>
+          </li>
+          <span>|</span>
+        }
+          <li class="nav-item">
+            <a mdbRipple type="button" role="button" class="btn bg-green-primary btn-sm text-black-secundary d-flex border border-color-green" href="https://wa.me/+554512341234" target="_blank">
+                <span><i class="fab fa-whatsapp fa-2x"></i></span>
+                <span class="fw-bold ps-2 font-16 text-nowrap">GRUPO WHATSAPP</span>
+            </a>
+          </li>
+        </ul>
+      </div>      
+</nav>
+
+<div class="collapse " id="navbarToggleExternalContent" mdbCollapse #externalContent="mdbCollapse">
+    <nav class="bg-dark d-flex justify-content-center">
+        <ul class="w-75 d-flex justify-content-evenly m-0 p-0 list-unstyled">
+            @for (item of actionsCategoria; track $index) {
+            <li><a href="{{item.url}}"><span class="text-nowrap text-white fw-medium font-14">{{item.text}}</span></a></li>
+            }
+        </ul>
+    </nav>
+</div>

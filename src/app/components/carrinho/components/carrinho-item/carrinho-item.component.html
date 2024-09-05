@@ -1,34 +1,49 @@
-<section class="h-custom text-white min-vh-100">
-  <div class="container py-5 h-100">
-      <div class="row d-flex justify-content-center align-items-center h-100">
-          <div class="col">
-              <div class="card bg-black-primary">
-                  <div class="card-body p-4">
-                      <div class="row">
-                          <div class="col-lg-7">
-                              <h5 class="mb-3"><a href="#!" class="text-white"><i
-                                          class="fas fa-long-arrow-alt-left me-2"></i>Continuar comprando</a></h5>
-                              <hr>
-                              <div class="d-flex justify-content-between align-items-center mb-4">
-                                  <div>
-                                      <p class="mb-1">Itens do carrinho</p>
-                                      <p class="mb-0">Você tem {{ carrinhoUser?.itemCarrinho?.length }} itens em seu carrinho</p>
-                                  </div>
-                              </div>
-                      @if(carrinhoUser != null){
-                          @for (itemCarrinho of carrinhoUser.itemCarrinho; track $index) {
-                              <app-carrinho-item [itemCarrinho]="itemCarrinho" (retorno)="retornoCarrinhoItem($event)"></app-carrinho-item>
-                          }
-                      }
-                          </div>
-                          <div class="col-lg-5">
-                              <app-carrinho-card [total]="total" [frete]="frete"></app-carrinho-card>
-
-                          </div>
-                      </div>
-                  </div>
-              </div>
-          </div>
+<div class="card mb-3 bg-grey text-white">
+  <div class="card-body">
+    <div class="d-flex justify-content-between">
+      <div class="d-flex flex-row align-items-center w-50 justify-content-star gap-4">
+        <div class="bg-image hover-overlay hover-zoom ripple rounded">
+          <img src="../../../../../assets/img/IMG_Card_Carrinho_GreenLine.jpg" class="img-fluid rounded-3"
+            alt="Shopping item" style="max-width: 65px;">
+        </div>
+        <div>
+          <h4>{{itemCarrinho.produto.nomeProduto}}</h4>
+          <p class="small mb-0">{{itemCarrinho.produto.descricaoProduto}}</p>
+        </div>
       </div>
+      <div class="d-flex flex-row align-items-center w-50 justify-content-between">
+        <div class="d-flex " style="max-width: 120px">
+          <button data-mdb-button-init data-mdb-ripple-init
+            class="btn p-2 bg-green-primary text-black-secundary border border-color-green" name="b{{itemCarrinho.idItem}}"
+            (click)="decrement()">
+            <i class="fas fa-minus"></i>
+          </button>
+
+          <div data-mdb-input-init class="form-outline ms-1 me-1">
+            <input id="form1" min="0" name="quantity" value="{{ itemCarrinho.quantProd }}" type="number"
+              class="form-control border text-white text-center pe-none p-1" />
+            <label class="form-label" for="form1"></label>
+          </div>
+
+          <button data-mdb-button-init data-mdb-ripple-init
+            class="btn p-2 bg-green-primary text-black-secundary border border-color-green" name="a{{itemCarrinho.idItem}}"
+            (click)="increment()">
+            <i class="fas fa-plus"></i>
+          </button>
+        </div>
+        <div>
+          <h5 class="mb-0">R${{  (itemCarrinho.valorUnitario * itemCarrinho.quantProd)  }}</h5>
+          <h5 style="font-size: 13px" class="mb-0">R${{  itemCarrinho.valorUnitario  }}</h5>
+        </div>
+
+        <div>
+          <button type="button" data-mdb-button-init data-mdb-ripple-init
+            class="btn btn-sm p-2 pe-3 ps-3 bg-green-primary text-black-secundary border border-color-green"
+            data-mdb-tooltip-init title="Remove item" (click)="delete()">
+            <i class="fas fa-trash-alt"></i>
+          </button>
+        </div>
+      </div>
+    </div>
   </div>
-</section>
+</div>

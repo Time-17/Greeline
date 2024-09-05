@@ -1,0 +1,48 @@
+body{
+    background-color: var(--black-primary);
+}
+
+.topo{
+    margin-top: 30vh;
+}
+
+   .custom-input:hover {
+        background-color: var(--black-secundary);
+        border-bottom: 2px solid var(--green-primary); /* Define apenas a borda inferior */
+   }
+
+   .no-border {
+    border: 0;
+    box-shadow: none; /* You may want to include this as bootstrap applies these styles too */
+    background-color: var(--black-secundary);
+}
+
+.input2{
+    width: 215px;
+}
+
+.card-body{
+   background-color: var(--grey);
+   
+}
+
+
+.buttons{
+    display: flex;
+    justify-content: center;
+    height: 42px;
+}
+
+.btn1{
+    background-color: #191919;
+   
+}
+
+.btn1:hover{
+    background-color: var(--green-primary);
+    border-color: var(--green-primary);
+    color: var(--black-primary);
+}
+
+
+

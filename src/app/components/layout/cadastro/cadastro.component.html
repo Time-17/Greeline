@@ -1,0 +1,33 @@
+<!-- src/app/cadastro/cadastro.component.html -->
+<div class="container">
+  <div class="row">
+    <div class="col-lg-4"></div>
+    <div class="col-lg-4 topo">
+      <div class="card">
+        <div class="card-body rounded-6">
+          <h3 class="card-title text-white fw-bold">Cadastro</h3>
+          <br>
+          <form #cadastroForm="ngForm" (ngSubmit)="save()">
+            <div class="form-group">
+              <input type="email" class="form-control no-border custom-input text-white" id="inputEmail" name="emailUsuario" [(ngModel)]="cadastro.emailUsuario" placeholder="EMAIL" required email pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$" #emailUsuario="ngModel">
+            </div>
+            <br>
+            <div class="form-group">
+              <input type="password" class="form-control no-border custom-input text-white input2" id="inputSenha" name="senhaUsuario" [(ngModel)]="cadastro.senhaUsuario" placeholder="SENHA" required>
+            </div>
+            <br>
+            <div class="form-group">
+              <input type="password" class="form-control no-border custom-input text-white input2" id="inputConfirm" name="confirmacaoSenha" [(ngModel)]="cadastro.confirmacaoSenha" placeholder="CONFIRMAR SENHA" required>
+            </div>
+            <br>
+            <br>
+            <div class="buttons">
+              <button type="submit" class="btn btn-outline-success text-white border-color-green btn1 px-5" mdbRipple="cadastroForm.invalid"> Cadastrar </button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+    <div class="col-lg-4"></div>
+  </div>
+</div>
