@@ -50,11 +50,6 @@ export const routes: Routes = [
 
     { path: 'admin', component: AdminLayoutComponent, canActivate: [loginguardGuard], children: [
         {
-            path: 'dashboard',
-            loadComponent: () => import('./components/grafico-vendas-dash/grafico-vendas-dash.component').then(c => c.GraficoVendasDashComponent),
-            title:'Admin | Dashboard'
-        },
-        {
             path: 'produtoslist',
             loadComponent: () => import('./components/produtos/produtoslist/produtoslist.component').then(c => c.ProdutoslistComponent),
             title:'Admin | Listagem de Produtos'
@@ -64,40 +59,7 @@ export const routes: Routes = [
             loadComponent: () => import('./components/produtos/produtosdetails/produtosdetails.component').then(c => c.ProdutosdetailsComponent),
             title:'Admin | Editagem de Produtos'
         },
-        {
-            path: 'vendaslist',
-            loadComponent: () => import('./components/vendaslist/vendaslist.component').then(c => c.VendaslistComponent),
-            title:'GreenLine | Listagem de Vendas'
-        },
-        {
-            path: 'categoriaslist',
-            loadComponent: () => import('./components/categorias/categoriaslist/categoriaslist.component').then(c => c.CategoriaslistComponent),
-            title:'GreenLine | Listagem de Categorias'
-        },
-        {
-            path: 'categoriasdetails',
-            loadComponent: () => import('./components/categorias/categoriasdetails/categoriasdetails.component').then(c => c.CategoriasdetailsComponent),
-            title:'GreenLine | Editagem de Categorias'
-        },
-        {
-            path: 'fornecedorlist',
-            loadComponent: () => import('./components/fornecedor/fornecedorlist/fornecedorlist.component').then(c => c.FornecedorlistComponent),
-            title:'GreenLine | Editagem de Categorias'
-        },
-        {
-            path: 'fornecedordetails',
-            loadComponent: () => import('./components/fornecedor/fornecedordetails/fornecedordetails.component').then(c => c.FornecedordetailsComponent),
-            title:'GreenLine | Editagem de Categorias'
-        },
-        {
-            path: 'clienteslist',
-            loadComponent: () => import('./components/listagem-clientes/listagem-clientes.component').then(c => c.ListagemClientesComponent),
-            title:'GreenLine | Listagem de Clientes'
-        },
-        {
-            path: 'auditoria',
-            loadComponent: () => import('./components/log-auditoria/log-auditoria.component').then(c => c.LogAuditoriaComponent),
-            title:'GreenLine | Log de Auditoria'
-        },
+
+
     ]}
 ];
